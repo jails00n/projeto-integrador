@@ -1,0 +1,16 @@
+{
+  "name": "projeto-integrador-backend",
+  "version": "1.0.0",
+  "description": "API de Produtos, Fornecedores e Associação - Projeto Integrador (Faculdade GRAN)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

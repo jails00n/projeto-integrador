@@ -1,0 +1,196 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "_type": "workspace",
+      "name": "Projeto Integrador"
+    },
+    {
+      "_id": "env_1",
+      "_type": "environment",
+      "parentId": "wrk_1",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3001"
+      }
+    },
+    {
+      "_id": "fld_1",
+      "_type": "request_group",
+      "parentId": "wrk_1",
+      "name": "API"
+    },
+    {
+      "_id": "req_1",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Listar produtos",
+      "method": "GET",
+      "url": "{{ _.base_url }}/produtos"
+    },
+    {
+      "_id": "req_2",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Criar produto",
+      "method": "POST",
+      "url": "{{ _.base_url }}/produtos",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Teclado mecânico\",\n  \"descricao\": \"ABNT2\",\n  \"preco\": 199.9,\n  \"codigo_barras\": \"7891234567895\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_3",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Buscar produto",
+      "method": "GET",
+      "url": "{{ _.base_url }}/produtos/1"
+    },
+    {
+      "_id": "req_4",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Atualizar produto",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/produtos/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Teclado mecânico\",\n  \"descricao\": \"ABNT2 sem fio\",\n  \"preco\": 229.9,\n  \"codigo_barras\": \"7891234567895\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_5",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Excluir produto",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/produtos/1"
+    },
+    {
+      "_id": "req_6",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Listar fornecedores",
+      "method": "GET",
+      "url": "{{ _.base_url }}/fornecedores"
+    },
+    {
+      "_id": "req_7",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Criar fornecedor",
+      "method": "POST",
+      "url": "{{ _.base_url }}/fornecedores",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"ACME Ltda\",\n  \"cnpj\": \"11.222.333/0001-81\",\n  \"endereco\": \"Rua A, 100\",\n  \"contato\": \"contato@acme.com\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_8",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Buscar fornecedor",
+      "method": "GET",
+      "url": "{{ _.base_url }}/fornecedores/1"
+    },
+    {
+      "_id": "req_9",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Atualizar fornecedor",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/fornecedores/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"ACME Ltda\",\n  \"cnpj\": \"11222333000181\",\n  \"endereco\": \"Rua B, 200\",\n  \"contato\": \"(86) 99999-0000\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_10",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Excluir fornecedor",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/fornecedores/1"
+    },
+    {
+      "_id": "req_11",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Associar produto a fornecedor",
+      "method": "POST",
+      "url": "{{ _.base_url }}/associacoes",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"produto_id\": 1,\n  \"fornecedor_id\": 1\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_12",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Listar associações",
+      "method": "GET",
+      "url": "{{ _.base_url }}/associacoes"
+    },
+    {
+      "_id": "req_13",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Desassociar",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/associacoes/1/1"
+    },
+    {
+      "_id": "req_14",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Produtos de um fornecedor",
+      "method": "GET",
+      "url": "{{ _.base_url }}/fornecedores/1/produtos"
+    },
+    {
+      "_id": "req_15",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Fornecedores de um produto",
+      "method": "GET",
+      "url": "{{ _.base_url }}/produtos/1/fornecedores"
+    }
+  ]
+}
